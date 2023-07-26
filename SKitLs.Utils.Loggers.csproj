@@ -4,6 +4,39 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyVersion>1.2.1</AssemblyVersion>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <FileVersion>$(AssemblyVersion)</FileVersion>
+    <PackageReleaseNotes>Initial stable listed release.</PackageReleaseNotes>
+    <PackageTags>Logging, Debugging Tools, Console Applications</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>libIcon_logger.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/Sargeras02/SKitLs.Utils.Loggers.git</PackageProjectUrl>
+    <Copyright>Copyright (C) Sargeras02 2023</Copyright>
+    <Description>Lightweight project aimed to streamline the logging process and simplify debugging for developers.</Description>
+    <Authors>Sargeras02, SKit-Labs</Authors>
+    <Version>$(AssemblyVersion)</Version>
+    <Title>$(AssemblyName)</Title>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\libIcon_logger.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

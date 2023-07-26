@@ -4,7 +4,7 @@ This project aims to streamline the logging process and simplify debugging for d
 
 ## Description
 
-Main purpose of the project is achieved through a well-designed, light-weight architecture consisting of three key elements:
+Main purpose of the project is achieved through a well-designed lightweight architecture consisting of three key elements:
 
 1. `enum LogType`:
 	
@@ -68,7 +68,7 @@ It is a self-contained solution that does not require the installation of additi
 
     To install the project by downloading the source code and directly linking it to your project, adhere to the following steps:
 
-    1. Visit the project repository on [GitHub](https://github.com/your-username/your-repo)
+    1. Visit the project repository on [GitHub](https://github.com/Sargeras02/SKitLs.Utils.Loggers.git)
     2. Click on the "Code" button and select "Download ZIP" to download the project's source code as a zip archive.
     3. Extract the downloaded zip archive to the desired location on your local machine.
     4. Open your existing project or create a new one in your IDE.
@@ -151,7 +151,7 @@ Copyright (C) Sargeras02 2023
 For any issues related to the project, please feel free to reach out to us through the project's GitHub page.
 We welcome bug reports, feedback, and any other inquiries that can help us improve the project.
 
-You can also contact the project owner directly via their GitHub profile at the following link: https://github.com/Sargeras02.
+You can also contact the project owner directly via their GitHub profile at the following [link](https://github.com/Sargeras02).
 
 Your collaboration and support are highly appreciated, and we will do our best to address any concerns or questions promptly and professionally.
 Thank you for your interest in our project.
