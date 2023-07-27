@@ -26,35 +26,35 @@ namespace SKitLs.Utils.Loggers.Prototype
 
         #region Shortcuts
         /// <summary>
-        /// Logs <paramref name="message"/> as an <see cref="LogType.Error"/> one.
+        /// Logs <paramref name="message"/> as <see cref="LogType.Error"/> one.
         /// </summary>
         /// <param name="message">Message to be logged.</param>
         /// <param name="standsAlone">Determines whether <paramref name="message"/> should be logged as a stand-alone one
         /// (ex: NewLine for Console).</param>
         public void Error(string message, bool standsAlone = true);
         /// <summary>
-        /// Logs <paramref name="message"/> as an <see cref="LogType.Warning"/> one.
+        /// Logs <paramref name="message"/> as <see cref="LogType.Warning"/> one.
         /// </summary>
         /// <param name="message">Message to be logged.</param>
         /// <param name="standsAlone">Determines whether <paramref name="message"/> should be logged as a stand-alone one
         /// (ex: NewLine for Console).</param>
         public void Warn(string message, bool standsAlone = true);
         /// <summary>
-        /// Logs <paramref name="message"/> as an <see cref="LogType.Successful"/> one.
+        /// Logs <paramref name="message"/> as <see cref="LogType.Successful"/> one.
         /// </summary>
         /// <param name="message">Message to be logged.</param>
         /// <param name="standsAlone">Determines whether <paramref name="message"/> should be logged as a stand-alone one
         /// (ex: NewLine for Console).</param>
         public void Success(string message, bool standsAlone = true);
         /// <summary>
-        /// Logs <paramref name="message"/> as an <see cref="LogType.System"/> one.
+        /// Logs <paramref name="message"/> as <see cref="LogType.System"/> one.
         /// </summary>
         /// <param name="message">Message to be logged.</param>
         /// <param name="standsAlone">Determines whether <paramref name="message"/> should be logged as a stand-alone one
         /// (ex: NewLine for Console).</param>
         public void System(string message, bool standsAlone = true);
         /// <summary>
-        /// Logs <paramref name="message"/> as an <see cref="LogType.Information"/> one.
+        /// Logs <paramref name="message"/> as <see cref="LogType.Information"/> one.
         /// </summary>
         /// <param name="message">Message to be logged.</param>
         /// <param name="standsAlone">Determines whether <paramref name="message"/> should be logged as a stand-alone one

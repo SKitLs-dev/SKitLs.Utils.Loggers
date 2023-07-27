@@ -13,7 +13,7 @@ namespace SKitLs.Utils.Loggers.Model
     /// </summary>
     public class DefaultConsoleLogger : ILogger
     {
-        public void Log(string message, LogType type = LogType.Message, bool standAlone = true)
+        public void Log(string message, LogType type = LogType.Message, bool standsAlone = true)
         {
             Console.ForegroundColor = type switch
             {
@@ -24,16 +24,16 @@ namespace SKitLs.Utils.Loggers.Model
                 LogType.Information => ConsoleColor.Cyan,
                 _ => ConsoleColor.Gray,
             };
-            if (standAlone) Console.WriteLine(message);
+            if (standsAlone) Console.WriteLine(message);
             else Console.Write($"{message} ");
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        public void Error(string message, bool standAlone = true) => Log($"{(standAlone ? "[X] " : string.Empty)}{message}", LogType.Error, standAlone);
-        public void Warn(string message, bool standAlone = true) => Log($"{(standAlone ? "[!] " : string.Empty)}{message}", LogType.Warning, standAlone);
-        public void Success(string message, bool standAlone = true) => Log($"{(standAlone ? "[✓] " : string.Empty)}{message}", LogType.Successful, standAlone);
-        public void System(string message, bool standAlone = true) => Log($"{(standAlone ? "[>] " : string.Empty)}{message}", LogType.System, standAlone);
-        public void Inform(string message, bool standAlone = true) => Log($"{(standAlone ? "[>] " : string.Empty)}{message}", LogType.Information, standAlone);
+        public void Error(string message, bool standsAlone = true) => Log($"{(standsAlone ? "[X] " : string.Empty)}{message}", LogType.Error, standsAlone);
+        public void Warn(string message, bool standsAlone = true) => Log($"{(standsAlone ? "[!] " : string.Empty)}{message}", LogType.Warning, standsAlone);
+        public void Success(string message, bool standsAlone = true) => Log($"{(standsAlone ? "[✓] " : string.Empty)}{message}", LogType.Successful, standsAlone);
+        public void System(string message, bool standsAlone = true) => Log($"{(standsAlone ? "[>] " : string.Empty)}{message}", LogType.System, standsAlone);
+        public void Inform(string message, bool standsAlone = true) => Log($"{(standsAlone ? "[>] " : string.Empty)}{message}", LogType.Information, standsAlone);
         public void DropEmpty() => Log(Environment.NewLine);
     }
 }

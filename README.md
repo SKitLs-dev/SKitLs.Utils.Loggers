@@ -1,4 +1,4 @@
-# SKitLs.Utils.Loggers
+# SKitLs.Utils.Loggers ![GitHub](https://img.shields.io/github/license/Sargeras02/SKitLs.Utils.Loggers) ![Nuget](https://img.shields.io/nuget/v/SKitLs.Utils.Loggers) [![CodeFactor](https://www.codefactor.io/repository/github/sargeras02/skitls.utils.loggers/badge)](https://www.codefactor.io/repository/github/sargeras02/skitls.utils.loggers) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sargeras02/SKitLs.Utils.Loggers)
 
 This project aims to streamline the logging process and simplify debugging for developers.
 
