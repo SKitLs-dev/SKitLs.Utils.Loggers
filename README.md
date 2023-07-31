@@ -59,7 +59,7 @@ It is a self-contained solution that does not require the installation of additi
 
     1. Open your preferred Integrated Development Environment (IDE) that supports NuGet package management (e.g., Visual Studio).
     2. Create a new project or open an existing one.
-    3. Go to "Tools" > "NuGet Package Manager" > "Manage NuGet Packages for Solution."
+    3. Select "Project" > "Manage NuGet Packages"
     4. In the "Browse" tab, search for the project package you want to install.
     5. Click on the "Install" button to add the selected package to your project.
     5. Follow any additional setup instructions or configurations provided in the project's documentation.
