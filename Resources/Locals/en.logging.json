@@ -1,0 +1,4 @@
+﻿{
+  "logging.TraceIn": "Trace: raising {0}.{1} (line {2} in {3})",
+  "logging.TraceOut": "Trace: leaving {0}.{1} (line {2} in {3})"
+}

@@ -1,32 +1,74 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>1.4.0</AssemblyVersion>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <FileVersion>$(AssemblyVersion)</FileVersion>
-    <PackageReleaseNotes>XML Docimentation Included</PackageReleaseNotes>
+    <PackageReleaseNotes>Loggers support localizations by default now; SKitLs.Utils.LocalLoggers is depeciated now.
+Fully refactored mechanisms. Added logging levels (turnable on/off). Provided unified LoggerBase and Formatings.
+
+(!) Updated: namespaces
+(!) Fully Refactored: ILogger Interface
+(!) Fully Refactored: ConsoleLogger (prev. DefaultConsoleLogger)
+
+(+) Added: LoggerBase class
+(+) Added: LogEvent class
+(+) Added: LoggerMode class
+(+) Updated: LogType enum (with LogType.Other)
+
+(+) Added: IFormatter interface
+(+) Added: Formatter class
+
+(+) Added: en.logging language pack
+(+) Added: default logging levels config
+
+(~) Updated: License
+(~) Updated: Readme</PackageReleaseNotes>
     <PackageTags>Logging, DebuggingTools, ConsoleApplications</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>libIcon_logger.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/Sargeras02/SKitLs.Utils.Loggers.git</PackageProjectUrl>
-    <Copyright>Copyright (C) Sargeras02 2023</Copyright>
+    <PackageProjectUrl>https://github.com/SKitLs-dev/SKitLs.Utils.Loggers.git</PackageProjectUrl>
+    <Copyright>Copyright (C) SKitLs 2023-2024</Copyright>
     <Description>Lightweight package aimed to streamline the logging process and simplify debugging for developers.</Description>
-    <Authors>Sargeras02, SKit-Labs</Authors>
-    <Version>$(AssemblyVersion)</Version>
+    <Authors>SKitLs, Sargeras02</Authors>
+    <Version>$(AssemblyVersion)-preview.0</Version>
     <Title>$(AssemblyName)</Title>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Locals\en.logging.json" />
+    <None Remove="Resources\Logging\levels.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Locals\en.logging.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		<Pack>true</Pack>
+		<PackagePath>contentFiles\any\any\Resources\Locals\</PackagePath>
+    </Content>
+    <Content Include="Resources\Logging\levels.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Pack>true</Pack>
+	  <PackagePath>contentFiles\any\any\Resources\Logging\</PackagePath>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\libIcon_logger.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SKitLs.Data.IO" Version="2.1.0" />
+    <PackageReference Include="SKitLs.Utils.Localizations" Version="3.2.4" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,30 +12,40 @@
         /// Messages are just logged without any formatting.
         /// </summary>
         Message,
+
         /// <summary>
         /// Represents warning message type.
         /// Warnings should attract attention.
         /// </summary>
         Warning,
+
         /// <summary>
         /// Represents information message type.
         /// Should attract attention and inform about some event.
         /// </summary>
         Information,
+
         /// <summary>
         /// Represents error message type.
         /// Errors should inform that something went wrong.
         /// </summary>
         Error,
+
         /// <summary>
         /// Represents success message type
         /// Should be raised when an action was done successfully.
         /// </summary>
         Successful,
+
         /// <summary>
         /// Represents system message type.
         /// System messages can be referred to some internal events, which could simplify debugging process.
         /// </summary>
-        System
+        System,
+
+        /// <summary>
+        /// Represents other (or custom) message type.
+        /// </summary>
+        Other,
     }
 }

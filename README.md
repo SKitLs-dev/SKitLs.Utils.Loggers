@@ -1,44 +1,18 @@
-# SKitLs.Utils.Loggers ![GitHub](https://img.shields.io/github/license/Sargeras02/SKitLs.Utils.Loggers) ![Nuget](https://img.shields.io/nuget/v/SKitLs.Utils.Loggers) [![CodeFactor](https://www.codefactor.io/repository/github/sargeras02/skitls.utils.loggers/badge)](https://www.codefactor.io/repository/github/sargeras02/skitls.utils.loggers) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sargeras02/SKitLs.Utils.Loggers)
+# SKitLs.Utils.Loggers ![GitHub](https://img.shields.io/github/license/SKitLs-dev/SKitLs.Utils.Loggers) ![Nuget](https://img.shields.io/nuget/v/SKitLs.Utils.Loggers) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SKitLs-dev/SKitLs.Utils.Loggers)
 
 This project aims to streamline the logging process and simplify debugging for developers.
 
-## Description
 
-Main purpose of the project is achieved through a well-designed lightweight architecture consisting of three key elements:
+## Contents
+- [Setup](#Setup)
+- [Usage](#Usage)
+- [Contributors](#Contributors)
+- [License](#License)
+- [Developer contact](#Developer-contact)
+- [Notes](#Notes)
 
-1. `enum LogType`:
-	
-	The LogType enum serves as a central component for categorizing different types of log messages within the project	.
-By using this enumeration, developers can easily identify and manage logs based on their specific purposes and significance.
-	
-	This enhances the overall organization of log data, making it more manageable and accessible.
-
-2. `interface ILogger`:
-   
-	The ILogger interface provides a standardized mechanism for logging messages throughout the project.					
-It abstracts the logging functionality and defines a set of methods and properties that any logging implementation must support.
-
-	This decoupling of logging logic allows developers to switch between different logging implementations without affecting the core functionality of the application.
-
-3. `class DefaultConsoleLogger : ILogger`:
-   
-	The DefaultConsoleLogger class is a concrete implementation of the ILogger interface, specifically tailored for Console Projects.
-It offers a default logging behavior for outputting events and messages to the console.
-By leveraging this implementation, developers can quickly enable logging in their Console-based applications without the need for extensive configuration.
-
-By combining these three elements, developers can create a versatile and extendable logging framework that facilitates debugging
-and improves overall project maintainability.
-
-The LogType enum categorizes logs, the ILogger interface provides a standardized logging mechanism, and the DefaultConsoleLogger class offers a default logging solution for Console Projects.
-
-This architecture promotes code reusability, modularity, and ease of use, empowering developers to efficiently manage log data and identify and resolve issues during the development process.
 
 ## Setup
-
-### Requirements
-
-This project does not have any external dependencies.
-It is a self-contained solution that does not require the installation of additional libraries or components.
 
 ### Installation
 
@@ -48,7 +22,7 @@ It is a self-contained solution that does not require the installation of additi
 
     1. Open the terminal or command prompt.
     2. Run command:
-    
+
     ```
     dotnet add package SKitLs.Utils.Loggers
     ```
@@ -79,56 +53,11 @@ It is a self-contained solution that does not require the installation of additi
 Please note that each method may have specific requirements or configurations that need to be followed for successful installation.
 Refer to the project's documentation for any additional steps or considerations.
 
+
 ## Usage
 
-### Enhancing Console-Based Logging:
+For documentation and usage examples [see wiki](https://github.com/SKitLs-dev/SKitLs.Utils.Loggers/wiki).
 
-For Console-based projects, you can take advantage of the DefaultConsoleLogger class:
-
-1. Initialize the DefaultConsoleLogger:
-
-    ```C#
-    ILogger logger = new DefaultConsoleLogger();
-    ```
-
-2. Logging Messages to the Console:
-
-    ```C#
-    logger.Log("This is an informational message.", LogType.Info);
-    logger.Log("Warning: Potential issue detected!", LogType.Warning);
-    logger.Log($"Error occurred: {exception.Message}", LogType.Error);
-    // or
-    logger.Warn("Warning: Potential issue detected!");
-    logger.Error($"Error occurred: {exception.Message}");
-    ```
-
-### Customizing Logging Behavior:
-
-If you need to customize the logging behavior based on your project's specific requirements,
-implement the ILogger interface in a custom class:
-
-1. Create a Custom Logger Class:
-
-    ```C#
-    public class CustomLogger : ILogger
-    {
-        // Implement the methods from the ILogger interface as per your custom logging needs.
-        // Example: You can log messages to a file, database, or an external service.
-    }
-    ```
-2. Initialize Your Custom Logger:
-
-    ```C#
-    ILogger logger = new CustomLogger(); // Use your custom logger to handle logging in your project.
-    ```
-
-3. Log Your Messages:
-
-    ```C#
-    logger.Log("This is an informational message.", LogType.Info);
-    logger.Warn("Warning: Potential issue detected!");
-    logger.Error($"Error occurred: {exception.Message}");
-    ```
 
 ## Contributors
 
@@ -140,21 +69,24 @@ Your participation will be greatly appreciated in moving the project forward.
 
 Thank you for considering contributing to our project.
 
+
 ## License
 
 This project is distributed under the terms of the MIT License.
 
-Copyright (C) Sargeras02 2023
+Copyright (C) 2023-2024, SKitLs
+
 
 ## Developer contact
 
 For any issues related to the project, please feel free to reach out to us through the project's GitHub page.
 We welcome bug reports, feedback, and any other inquiries that can help us improve the project.
 
-You can also contact the project owner directly via their GitHub profile at the following [link](https://github.com/Sargeras02).
+You can also contact the project owner directly via their GitHub profile at the [following link](https://github.com/SKitLs-Dev) or email: skitlsdev@gmail.com
 
 Your collaboration and support are highly appreciated, and we will do our best to address any concerns or questions promptly and professionally.
 Thank you for your interest in our project.
+
 
 ## Notes
 
