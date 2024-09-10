@@ -4,31 +4,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <AssemblyVersion>2.0.1</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <FileVersion>$(AssemblyVersion)</FileVersion>
-    <PackageReleaseNotes>Loggers support localizations by default now; SKitLs.Utils.LocalLoggers is depeciated now.
-Fully refactored mechanisms. Added logging levels (turnable on/off). Provided unified LoggerBase and Formatings.
-
-(!) Updated: namespaces
-(!) Fully Refactored: ILogger Interface
-(!) Fully Refactored: ConsoleLogger (prev. DefaultConsoleLogger)
-
-(+) Added: LoggerBase class
-(+) Added: LogEvent class
-(+) Added: LoggerMode class
-(+) Updated: LogType enum (with LogType.Other)
-
-(+) Added: IFormatter interface
-(+) Added: Formatter class
-
-(+) Added: en.logging language pack
-(+) Added: default logging levels config
-
-(~) Updated: License
-(~) Updated: Readme
-(~) Provided up-todated XML-Docs</PackageReleaseNotes>
+    <PackageReleaseNotes>(~) Updated: default Localizator is set to Store one</PackageReleaseNotes>
     <PackageTags>Logging, DebuggingTools, ConsoleApplications</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>libIcon_logger.png</PackageIcon>

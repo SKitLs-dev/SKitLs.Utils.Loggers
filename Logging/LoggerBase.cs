@@ -41,7 +41,7 @@ namespace SKitLs.Utils.Loggers.Logging
         /// <param name="formatter">An optional formatter for formatting logs. Defaults to a new <see cref="Formatting.Formatter"/> if <see langword="null"/>.</param>
         public LoggerBase(ILocalizator? localizator, IFormatter? formatter)
         {
-            Localizator = localizator ?? new GateLocalizator();
+            Localizator = localizator ?? new StoredLocalizator();
             Formatter = formatter ?? new Formatter(Localizator);
 
             Configure();
