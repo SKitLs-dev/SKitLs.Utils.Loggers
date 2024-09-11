@@ -4,11 +4,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>2.0.1</AssemblyVersion>
+    <AssemblyVersion>2.0.2</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <FileVersion>$(AssemblyVersion)</FileVersion>
-    <PackageReleaseNotes>(~) Updated: default Localizator is set to Store one</PackageReleaseNotes>
+    <PackageReleaseNotes>(~) Updated: SKitLs.Data.IO to 2.2.0</PackageReleaseNotes>
     <PackageTags>Logging, DebuggingTools, ConsoleApplications</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>libIcon_logger.png</PackageIcon>
@@ -48,7 +48,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SKitLs.Data.IO" Version="2.1.0" />
+    <PackageReference Include="SKitLs.Data.IO" Version="2.2.0" />
     <PackageReference Include="SKitLs.Utils.Localizations" Version="3.2.4" />
   </ItemGroup>
 
