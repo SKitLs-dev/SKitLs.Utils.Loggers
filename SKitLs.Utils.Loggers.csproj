@@ -4,11 +4,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>2.0.2</AssemblyVersion>
+    <AssemblyVersion>2.0.3</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <FileVersion>$(AssemblyVersion)</FileVersion>
-    <PackageReleaseNotes>(~) Updated: SKitLs.Data.IO to 2.2.0</PackageReleaseNotes>
+    <PackageReleaseNotes>(~) Updated: SKitLs.Data.IO to 2.2.1</PackageReleaseNotes>
     <PackageTags>Logging, DebuggingTools, ConsoleApplications</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>libIcon_logger.png</PackageIcon>
