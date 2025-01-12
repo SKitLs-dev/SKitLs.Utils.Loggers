@@ -1,4 +1,5 @@
-﻿using SKitLs.Utils.Localizations.Model;
+﻿using SKitLs.Utils.Extensions.Lists;
+using SKitLs.Utils.Localizations.Model;
 using SKitLs.Utils.Loggers.Prototype;
 using System.Runtime.CompilerServices;
 
@@ -59,7 +60,16 @@ namespace SKitLs.Utils.Loggers.Logging
         public static void Exception(this ILogger logger, Exception ex, string logType = nameof(LogType.Error), LoggerMode? mode = null)
         {
             mode ??= 1;
-            logger.Log(ex.Message, logType, mode);
+
+            var exceptionToPrint = ex;
+            var message = new List<string>();
+            while (exceptionToPrint is not null)
+            {
+                message.Add($"({exceptionToPrint.Source}) {exceptionToPrint.Message}");
+                exceptionToPrint = exceptionToPrint.InnerException;
+            }
+            message.Reverse();
+            logger.Log(message.JoinString(" <- "), logType, mode);
         }
 
         /// <summary>
@@ -72,7 +82,10 @@ namespace SKitLs.Utils.Loggers.Logging
         public static void ExceptionFull(this ILogger logger, Exception ex, string logType = nameof(LogType.Error), LoggerMode? mode = null)
         {
             mode ??= 1;
-            logger.Log($"Message: {ex.Message}\nStack trace: {ex.StackTrace}", logType, mode);
+
+            logger.Log($"Message: {ex.Message}\nHelp: {ex.HelpLink ?? "None"}", logType, mode);
+            logger.System($"Stack trace: {ex.StackTrace}");
+
             if (ex.InnerException is not null)
             {
                 logger.Log("Inner exception:", logType, mode);

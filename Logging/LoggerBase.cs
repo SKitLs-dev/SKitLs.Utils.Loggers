@@ -1,4 +1,4 @@
-﻿using SKitLs.Data.IO.Shortcuts;
+﻿using SKitLs.Data.IO;
 using SKitLs.Utils.Localizations.Languages;
 using SKitLs.Utils.Localizations.Localizators;
 using SKitLs.Utils.Localizations.Model;
@@ -25,6 +25,11 @@ namespace SKitLs.Utils.Loggers.Logging
         public static LoggerMode PrintAllMode => (LoggerMode)PrintAllModeName;
 
         /// <summary>
+        /// Get or sets the path to the leveling definition.
+        /// </summary>
+        public string? LevelingFilePath { get; set; }
+
+        /// <summary>
         /// Gets or sets the formatter responsible for formatting log events.
         /// </summary>
         protected IFormatter Formatter { get; set; }
@@ -37,10 +42,12 @@ namespace SKitLs.Utils.Loggers.Logging
         /// <summary>
         /// Initializes a new instance of the <see cref="LoggerBase"/> class with the specified localizator and formatter.
         /// </summary>
+        /// <param name="levelingFilePath">The path to the leveling definition</param>
         /// <param name="localizator">An optional localizator for message localization. Defaults to a new <see cref="GateLocalizator"/> if <see langword="null"/>.</param>
         /// <param name="formatter">An optional formatter for formatting logs. Defaults to a new <see cref="Formatting.Formatter"/> if <see langword="null"/>.</param>
-        public LoggerBase(ILocalizator? localizator, IFormatter? formatter)
+        public LoggerBase(string? levelingFilePath, ILocalizator? localizator, IFormatter? formatter)
         {
+            LevelingFilePath = levelingFilePath;
             Localizator = localizator ?? new StoredLocalizator();
             Formatter = formatter ?? new Formatter(Localizator);
 
@@ -99,11 +106,14 @@ namespace SKitLs.Utils.Loggers.Logging
         /// <summary>
         /// Loads logger configuration from a file asynchronously and enables corresponding logger modes.
         /// </summary>
-        /// <param name="configPath">The file path to the configuration file. Defaults to "Resources/Logging/levels.txt".</param>
-        public async Task FromFileAsync(string configPath = "Resources/Logging/levels.txt")
+        private async Task<bool> FromFileAsync()
         {
-            var enables = await HotIO.LoadPairsAsync(configPath, "$");
+            if (string.IsNullOrEmpty(LevelingFilePath) || !File.Exists(LevelingFilePath))
+                return false;
+            
+            var enables = await HotIO.LoadPairsAsync(LevelingFilePath, "$");
             enables.Select(Parse).ToList().ForEach(Enable);
+            return true;
 
             static LoggerMode Parse(KeyValuePair<string, string> config)
             {
@@ -113,13 +123,23 @@ namespace SKitLs.Utils.Loggers.Logging
             }
         }
 
+        private void Manual()
+        {
+            Enable(LoggerMode.Essential());
+            Enable(LoggerMode.Advanced());
+            Enable(LoggerMode.Tracing());
+            Enable(LoggerMode.Diagnostic());
+            Enable(LoggerMode.Debugging());
+        }
+
         /// <summary>
         /// Configures the logger by enabling the print-all mode and loading configuration from a file.
         /// </summary>
         protected virtual async void Configure()
         {
             Enable(PrintAllMode);
-            await FromFileAsync();
+            if (!await FromFileAsync())
+                Manual();
         }
         #endregion
 

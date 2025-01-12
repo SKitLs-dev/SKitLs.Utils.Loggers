@@ -25,10 +25,11 @@ namespace SKitLs.Utils.Loggers.Logging
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleLogger"/> class with optional localization, formatting, and maximum output length.
         /// </summary>
+        /// <param name="levelingFilePath">The path to the leveling definition</param>
         /// <param name="localizator">Optional localizator to localize log messages.</param>
         /// <param name="formatter">Optional formatter to format log messages. Defaults to a new <see cref="Formatting.Formatter"/> if null.</param>
         /// <param name="maxOutputLength">The maximum length of the log message to output to the console. Defaults to 128 characters.</param>
-        public ConsoleLogger(ILocalizator? localizator = null, IFormatter? formatter = null, int maxOutputLength = 128) : base(localizator, formatter)
+        public ConsoleLogger(string? levelingFilePath = null, ILocalizator? localizator = null, IFormatter? formatter = null, int maxOutputLength = 128) : base(levelingFilePath, localizator, formatter)
         {
             MaxOutputLength = maxOutputLength;
         }

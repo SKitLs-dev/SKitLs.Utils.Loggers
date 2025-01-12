@@ -1,5 +1,0 @@
-﻿Essential$1
-Advanced$3
-Tracing$5
-Diagnostic$7
-Debugging$9

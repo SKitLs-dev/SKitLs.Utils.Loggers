@@ -4,11 +4,15 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyVersion>2.0.3</AssemblyVersion>
+    <AssemblyVersion>2.1.0</AssemblyVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <FileVersion>$(AssemblyVersion)</FileVersion>
-    <PackageReleaseNotes>(~) Updated: SKitLs.Data.IO to 2.2.1</PackageReleaseNotes>
+    <PackageReleaseNotes>(!) Essential: Rid of in0built leveling. Using Manual() void by default
+(~) Updated: Exceptions Logging
+
+(~) Dep: SKitLs.Data.IO -&gt; SKitLs.Data (1.0.0-rc.1)
+(~) Dep: SKitLs.Utils.Localizations -&gt; 3.2.5</PackageReleaseNotes>
     <PackageTags>Logging, DebuggingTools, ConsoleApplications</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>libIcon_logger.png</PackageIcon>
@@ -16,7 +20,7 @@
     <Copyright>Copyright (C) SKitLs 2023-2024</Copyright>
     <Description>Lightweight package aimed to streamline the logging process and simplify debugging for developers.</Description>
     <Authors>SKitLs, Sargeras02</Authors>
-    <Version>$(AssemblyVersion)</Version>
+    <Version>$(AssemblyVersion)-rc.0</Version>
     <Title>$(AssemblyName)</Title>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -33,11 +37,6 @@
 		<Pack>true</Pack>
 		<PackagePath>contentFiles\any\any\Resources\Locals\</PackagePath>
     </Content>
-    <Content Include="Resources\Logging\levels.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Pack>true</Pack>
-	  <PackagePath>contentFiles\any\any\Resources\Logging\</PackagePath>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -48,8 +47,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SKitLs.Data.IO" Version="2.2.0" />
-    <PackageReference Include="SKitLs.Utils.Localizations" Version="3.2.4" />
+    <PackageReference Include="SKitLs.Data" Version="1.0.0-rc.1" />
+    <PackageReference Include="SKitLs.Utils.Localizations" Version="3.2.5" />
   </ItemGroup>
 
   <ItemGroup>
